@@ -100,7 +100,7 @@ get_header();
                         <div class="propiedad-ubicacion">
                             Rosario, Santa Fé.
                         </div>
-                        <div class="propiedad-dirección">
+                        <div class="propiedad-direccion">
                             Av. San Martin 2950.
                             Piso 5 Dto:A.
                         </div>

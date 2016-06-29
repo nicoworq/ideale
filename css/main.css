@@ -71,7 +71,7 @@ h1,h2,h3,h4,p{
  * ----------- */
 
 .navbar{
-    padding-top: 38px;
+    padding-top: 57px;
     position: absolute;
     top: 0;
     left: 0;
@@ -81,7 +81,7 @@ h1,h2,h3,h4,p{
 
 .secondary-nav{
     position: absolute;
-    top: 19px;
+    top: 26px;
     left: 0;
     right: 0;
     font-size: 12px;
@@ -95,18 +95,18 @@ h1,h2,h3,h4,p{
     text-align: center;
     padding: 0;
     margin: 0;
-    padding-top: 22px;
+    padding-top: 0;
     padding-bottom: 15px;
 }
 #navbar ul li{
     display: inline-block;
-    margin-right: 36px;
+    margin-right: 25px;
     position: relative;
 }
 #navbar ul > li a{
     display: inline-block;
     color: #646464;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     transition: all .1s ease;
     padding: 5px 10px;
@@ -240,7 +240,7 @@ h1,h2,h3,h4,p{
 .navbar-brand{
     height: auto;
     padding-left: 0;
-    padding: 15px 0;
+    padding: 0;
 }
 .navbar-brand svg{width: 196px}
 
@@ -485,9 +485,11 @@ h1,h2,h3,h4,p{
     list-style: none;  
     position: relative;
 }
-.slider-contenido{width: 100%;position: relative;
-                  padding-top: 185px;
-                  padding-bottom: 120px;
+.slider-contenido{
+    width: 100%;
+    position: relative;
+    padding-top: 180px;
+    padding-bottom: 120px;
 }
 
 
@@ -504,18 +506,18 @@ h1,h2,h3,h4,p{
     color: #646464;
     margin: 0;
     margin-top: 9px;
-    margin-bottom: 28px;
-    line-height: 24px;
+    margin-bottom: 35px;
+    line-height: 26px;
 }
 .slider-contenido .slider-contenido-titulo p{
     color: #585d5e;
     font-weight: 300;
     margin: 0;
     font-size: 38px;
-    line-height: 44px;
-    margin-bottom: 23px;
-    margin-left: -7px;
+    line-height: 45px;
+    margin-bottom: 30px;
     text-transform: uppercase;
+    letter-spacing: 0px;
 }
 .slider-contenido .slider-contenido-titulo p span{
     color: #5da2ad;
@@ -692,7 +694,7 @@ h1,h2,h3,h4,p{
 #home-servicios{
     background: white;
     overflow: hidden;
-    padding: 50px 0;
+    padding: 82px 0 0;
 }
 
 .servicio-home{
@@ -701,7 +703,15 @@ h1,h2,h3,h4,p{
     position: relative;
     display: block;
 }
-
+#alquiler-home:hover .servicio-home-bg{
+    transform: scale(1.05) translateX(-20px);
+}
+#venta-home:hover .servicio-home-bg{
+    transform: scale(1.05) translateX(20px);
+}
+.servicio-home-bg{
+        transition: .4s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
 .servicio-home-contenido{
     position: absolute;
     top: 0;
@@ -709,7 +719,7 @@ h1,h2,h3,h4,p{
     padding-left: 79px;
     padding-right: 79px;
     top: 50%;
-    margin-top: -100px;
+    margin-top: -92px;
 }
 
 .servicio-home h3{
@@ -725,6 +735,7 @@ h1,h2,h3,h4,p{
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
+    line-height: 19px;
 }
 
 #alquiler-home{}
@@ -751,6 +762,7 @@ h1,h2,h3,h4,p{
     color: rgb(59, 62, 70);
     text-align: center;
     font-weight: 300;
+    margin: 20px 0 36px;
 }
 
 
@@ -764,6 +776,7 @@ h1,h2,h3,h4,p{
     margin-left: auto;
     margin-right: auto;
     font-weight: 300;
+    margin-bottom: 37px;
 }
 
 /* -----------
@@ -772,14 +785,15 @@ h1,h2,h3,h4,p{
 
 #home-contenido{
     background: white;
-    padding: 75px 0 0;
+    padding: 34px 0 0;
 }
 
 #home-contenido h2{
     font-size: 28px;
-    line-height: 40px;
+    line-height: 35px;
     font-weight: 300;
     color: #3b3b3b;
+    margin-bottom: 44px;
 }
 
 #home-contenido > div{text-align: center;}
@@ -793,13 +807,14 @@ h1,h2,h3,h4,p{
     color: #599eaf;
     margin: 0;
     text-align: center;
+    margin-bottom: 0;
 }
 #home-contenido p{
     font-size: 14px;
     font-weight: 400;
     color: #3b3b3b;
     line-height: 24px;
-    margin: 27px 0;
+    margin: 16px 0;
     /* max-width: 406px; */
     margin-left: auto;
     margin-right: auto;
@@ -841,7 +856,7 @@ h1,h2,h3,h4,p{
 #home-anios{
     background: url(../img/12-anios.jpg)no-repeat 50%;
     background-size: cover;
-    padding: 72px 0;
+    padding: 72px 0 78px;
 }
 .home-anios-content{}
 .home-anios-content h2{
@@ -849,8 +864,7 @@ h1,h2,h3,h4,p{
     font-weight: 300;
     color: #3b3e46;
     margin: 0;
-    margin-bottom: 20px;
-
+    margin-bottom: 22px;
 }
 .home-anios-content h2 strong{
     font-size: 90px;
@@ -1121,7 +1135,7 @@ footer .menu-menu-1-container{
     text-decoration: none;
     color: #FFF;
     background: #599eaf;
-    padding: 12px 36px;
+    padding: 15px 36px;
     text-transform: none;
     font-size: 14px;
     font-weight: 400;
@@ -1137,6 +1151,7 @@ footer .menu-menu-1-container{
 }
 .bt-cta{
     box-shadow: 0px 1px 8px rgba(134, 134, 134, 0.54);
+    padding: 15px 33px;
 }
 
 .bt-oscuro{
@@ -1386,7 +1401,7 @@ input[name=sex]{
 
 #form-contacto-paginas{
     background: white;
-    padding: 43px 0;
+    padding: 53px 0;
     background-size: cover;
     position: relative;
 }
@@ -1582,9 +1597,9 @@ input[name=sex]{
     font-size: 17px;
     font-weight: 300;
     color: #3b3e46;
-    line-height: 34px;
+    line-height: 33px;
     margin: 0;
-    margin-bottom: 46px;
+    margin-bottom: 37px;
 }
 
 
@@ -1964,7 +1979,7 @@ input[name=sex]{
  * ----------- */
 
 #home-propiedad-destacada {
-    padding: 50px 0;
+    padding: 53px 0 47px;
     background: white;
     border-bottom: 1px solid #e2e2e2;
 }
@@ -1980,9 +1995,9 @@ input[name=sex]{
     display: table-cell;
     width:32%;
     padding-left: 40px;
-    padding-top: 25px;
+    padding-top: 27px;
     padding-right: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 27px;
 }
 .propiedad-imagen{
     display: table-cell;
@@ -1994,8 +2009,8 @@ input[name=sex]{
     color: #606060;
     font-size: 14px;
     display: inline-block;
-    padding: 1px 5px;
-    margin-bottom: 13px;
+    padding: 1px 20px 1px 6px;
+    margin-bottom: 11px;
 }
 .propiedad-tipo-operacion svg{
     margin-top: 4px;
@@ -2011,7 +2026,7 @@ input[name=sex]{
     display: inline-block;
     float: left;
     margin-top: 1px;
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .propiedad-ubicacion{
@@ -2020,11 +2035,12 @@ input[name=sex]{
     font-weight: 400;
 }
 
-.propiedad-direcciÃ³n{
+.propiedad-direccion{
     font-size: 28px;
     color:#599eaf;
     font-weight: 400;
-    margin: 10px 0;
+    margin: 4px 0 14px;
+    line-height: 35px;
 }
 
 .propiedad-intro{
@@ -2044,6 +2060,7 @@ input[name=sex]{
     color: #232323;
     font-size: 15px;
     font-weight: 400;
+    margin-bottom: 4px;
 }
 .propiedad-info .propiedad-zona{}
 .propiedad-info .propiedad-superficie{}
@@ -2052,11 +2069,12 @@ input[name=sex]{
     color: #292929;
     font-size: 32px;
     font-weight: 400;
-    margin: 15px 0;
+    margin: 12px 0 23px;
 }
 
 .bt-ver-propiedad-home{
     background: #480870;
+    padding: 15px 48px;
 }
 
 
@@ -2067,15 +2085,14 @@ input[name=sex]{
 #home-blog{
     background: white;
     padding-top: 50px;
-    padding-bottom: 80px;
+    padding-bottom: 84px;
 }
 #home-blog h2{
     font-weight: 300;
     font-size: 28px;
     color:#3d3d3d;
     margin: 0;
-    margin-bottom: 40px;
-    
+    margin-bottom: 45px;
 }
 #home-blog h2 a{
     display: block;
@@ -2085,7 +2102,7 @@ input[name=sex]{
     font-weight: 400;
     background: url(../img/flecha-link-negra.png) no-repeat 100% 50%;
     padding-right: 20px;
-    margin-top: 9px;
+    margin-top: 16px;
 }
 /* -----------
  *  NOTA BLOG
@@ -2097,17 +2114,18 @@ input[name=sex]{
     font-size: 21px;
     color: #3d3d3d;
     font-weight: 400;
-    margin: 30px 0;
-   
+    margin: 31px 0;
+    line-height: 26px;
 }
 .nota-blog-bg{
     height: 240px;
-     
+
 }
 .nota-ver-mas{
     padding-right: 20px;
     color: #38aac1;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    background: url(../img/flecha-link.png)no-repeat 30% 50%;
+    background: url(../img/flecha-link.png)no-repeat 29% 50%;
+    letter-spacing: 0.2px;
 }

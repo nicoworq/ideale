@@ -28,7 +28,7 @@
                     <?php wp_nav_menu(array('theme_location' => 'secondary', 'menu_id' => 'footer-menu')); ?>
 
                     <a href="#" id="footer-logo">
-                        <img src="<?php echo get_template_directory_uri() . '/img/villber_logo_positivo.svg' ?>" alt="Villber" />
+                        <img src="<?php echo get_template_directory_uri() . '/img/ideale-logo.svg' ?>" alt="Ideale Propiedades" />
                     </a>
                 </div>
             </div>

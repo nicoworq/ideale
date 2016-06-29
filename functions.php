@@ -382,7 +382,7 @@ function mostrar_slider_worq() {
                                             <div class="slider-contenido">
                                                 <div class="slider-contenido-titulo"><?php echo $titulo; ?></div>
                                                 <p><?php echo $texto; ?></p>
-                                                <a class="bt-sitio bt-cta" href="<?php echo $linkHref; ?>" ><?php echo $texto_boton;?></a>
+                                                <a class="bt-sitio bt-cta" href="<?php echo $linkHref; ?>" ><?php echo $texto_boton; ?></a>
                                             </div>
                                         </div>
                                     </div>
@@ -392,18 +392,6 @@ function mostrar_slider_worq() {
 
                     </div>
                 <?php endwhile; ?>
-            </div>
-
-
-
-            <div id="slider-worq-dots">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="dots-container"></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -449,7 +437,7 @@ if (function_exists("register_field_group")) {
                 'default_value' => '',
                 'placeholder' => 'Ingrese el titulo del slide',
                 'toolbar' => 'full',
-				'media_upload' => 'no',
+                'media_upload' => 'no',
                 'formatting' => 'br',
             ),
             array(

@@ -26,7 +26,7 @@
 
         <nav class="navbar" role="navigation">
             <div class="secondary-nav">
-                Villber Equipamientos comerciales  -  (0341) 4661462  -  Pte. Roca 6055 Rosario, Santa Fe.
+              (0341) 4661462  -  Pte. Roca 6055 Rosario, Santa Fe.
             </div>
             <div class="container">
                 <div class="col-md-12">
@@ -51,7 +51,7 @@
 
                         <a class="navbar-brand" href="<?php echo get_site_url(); ?>">
 
-                            <img src="<?php echo get_template_directory_uri() . '/img/ideale-logo.svg' ?>" alt="Ideale" />
+                            <img src="<?php echo get_template_directory_uri() . '/img/ideale-logo.svg' ?>" alt="Ideale Propiedades" />
                             
                    
                         </a>
