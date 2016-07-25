@@ -5,6 +5,38 @@
 
 
         /* -----------
+         *  TAB SERVICIOS
+         * ----------- */
+
+        $('#servicios-tabs a').click(function (e) {
+            e.preventDefault();
+
+
+
+
+            if ($(this).hasClass('active')) {
+                return false;
+            }
+
+            var tabClicked = $(this).attr('data-tab');
+
+            $('#servicios-tabs a').removeClass('active');
+
+            $(this).addClass('active');
+
+            $('.servicio-tab.active').fadeOut(function () {
+
+                $('.servicio-tab').removeClass('active');
+
+                $('#tab' + tabClicked).fadeIn().addClass('active');
+
+            });
+
+
+        });
+
+
+        /* -----------
          *  SLIDER HOME
          * ----------- */
 
@@ -142,49 +174,11 @@
             ]});
 
 
-        
-
-        /* -----------
-         *  NEWSLETTER SUSCRIBE
-         * ----------- */
-
-        $('#form-suscribir-footer input[name=email]').focus(function () {
-            $('#form-suscribir-footer').addClass('focus');
-        });
-        $('#form-suscribir-footer input[name=email]').blur(function () {
-            $('#form-suscribir-footer').removeClass('focus');
-        });
-
-        $('#form-suscribir-footer input[name=email]').keyup(function () {
-            $('#form-suscribir-footer').removeClass('input-error');
-        });
-
-        $('#form-suscribir-footer').submit(function (event) {
-            event.preventDefault();
-
-            if (!validateEmail($('#form-suscribir-footer input[name=email]').val())) {
-                $('#form-suscribir-footer').addClass('input-error');
-                swal("Oops...", "Debe ingresar un Email Valido.", "error");
-                return false;
-            }
 
 
 
-            $('footer .ajaxing').fadeIn();
 
-            $.post(Villber.ajaxUrl, $('#form-suscribir-footer').serialize(), function (json) {
-                $('footer .ajaxing').fadeOut();
-                if (json.enviado) {
-                    swal("Gracias!", "Te has suscrito a nuestro newsletter!", "success");
-                    $('#form-suscribir-footer')[0].reset();
-                } else {
-                    swal("Oops...", "Error al generar tu suscripcion!", "error");
-                }
-            });
 
-        });
-
-       
 
 
         /*
@@ -196,7 +190,7 @@
             $('body').toggleClass('noScroll');
         });
 
-      
+
 
         /*
          * MAPA
@@ -211,7 +205,7 @@
             var marker = new google.maps.Marker({
                 position: latLngMarker,
                 map: map,
-                icon: Villber.themeUrl + '/img/map_pin.png',
+                icon: Ideale.themeUrl + '/img/map_pin.png',
                 scrollwheel: false
             });
 
@@ -222,7 +216,7 @@
 
         }
 
-  
+
 
 
 
@@ -264,11 +258,104 @@
 
             $('#contacto .ajaxing, #form-contacto-paginas .ajaxing').show();
 
-            $.post(Villber.ajaxUrl, $('#form-contacto').serialize(), function (json) {
+            $.post(Ideale.ajaxUrl, $('#form-contacto').serialize(), function (json) {
                 $('#contacto  .ajaxing , #form-contacto-paginas .ajaxing').hide();
                 if (json.enviado) {
                     swal("Gracias!", "Se ha enviado tu consulta. Nos comunicaremos a la brevedad", "success");
                     form[0].reset();
+                } else {
+                    swal("Oops...", "Error al enviar tu consulta!", "error");
+
+                }
+            });
+
+        });
+
+
+        $('input,textarea').keydown(function () {
+            $(this).removeClass('input-error');
+            $(this).parent().removeClass('input-error');
+        })
+
+
+        /* -----------
+         *  NEWSLETTER SUSCRIBE
+         * ----------- */
+
+        $('#form-suscribir-footer input[name=email]').focus(function () {
+            $('#form-suscribir-footer').addClass('focus');
+        });
+        $('#form-suscribir-footer input[name=email]').blur(function () {
+            $('#form-suscribir-footer').removeClass('focus');
+        });
+
+        $('#form-suscribir-footer input[name=email]').keyup(function () {
+            $('#form-suscribir-footer').removeClass('input-error');
+        });
+
+        $('#form-suscribir-footer').submit(function (event) {
+            event.preventDefault();
+
+            if (!validateEmail($('#form-suscribir-footer input[name=email]').val())) {
+                $('#form-suscribir-footer').addClass('input-error');
+                swal("Oops...", "Debe ingresar un Email Valido.", "error");
+                return false;
+            }
+
+
+
+            $('footer .ajaxing').fadeIn();
+
+            $.post(Ideale.ajaxUrl, $('#form-suscribir-footer').serialize(), function (json) {
+                $('footer .ajaxing').fadeOut();
+                if (json.enviado) {
+                    swal("Gracias!", "Te has suscrito a nuestro newsletter!", "success");
+                    $('#form-suscribir-footer')[0].reset();
+                } else {
+                    swal("Oops...", "Error al generar tu suscripcion!", "error");
+                }
+            });
+
+        });
+
+
+        /* -----------
+         *  FORM CONTACTO PROPIEDAD
+         * ----------- */
+        $('#form-contacto-propiedad').submit(function (event) {
+            event.preventDefault();
+
+            var formOK = true;
+
+            $('#form-contacto-propiedad input[type=text], #form-contacto-propiedad textarea').not('input[name=sex]').each(function () {
+                $(this).removeClass('input-error');
+                if ($(this).val() === '') {
+                    formOK = false;
+                    $(this).addClass('input-error');
+                }
+            });
+
+            if (!formOK) {
+                swal("Oops...", "Debe completar todos los campos", "error");
+                return false;
+            }
+
+
+            if (!validateEmail($('#form-contacto-propiedad input[name=email]').val())) {
+                $('#form-contacto-propiedad input[name=email]').addClass('input-error');
+                swal("Oops...", "Debe ingresar un Email Valido.", "error");
+                return false;
+            }
+
+            $('.propiedad-contacto .ajaxing').fadeIn();
+
+            $.post(Ideale.ajaxUrl, $('#form-contacto-propiedad').serialize(), function (json) {
+                $('.propiedad-contacto .ajaxing').fadeOut();
+                if (json.enviado) {
+                    swal("Gracias!", "Se ha enviado tu consulta. Nos comunicaremos a la brevedad", "success");
+
+                    $('#form-contacto-propiedad')[0].reset();
+
                 } else {
                     swal("Oops...", "Error al enviar tu consulta!", "error");
 

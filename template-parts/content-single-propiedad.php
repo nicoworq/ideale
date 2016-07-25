@@ -50,6 +50,12 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
                     <li class="propiedad-zona">
                         Zona <span><?php the_field('zona') ?></span>
                     </li>
+
+                    <?php if (get_field('barrio')) {
+                        ?>
+                        <li>Barrio <span><?php the_field('barrio') ?></span></li>
+                    <?php }
+                    ?>
                     <li class="propiedad-superficie">
                         Superficie <span><?php the_field('medidas') ?> <?php the_field('unidad_medidas'); ?> </span>
                     </li>
@@ -64,13 +70,7 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
 
                 </ul>
 
-                <div class="post-propiedad-zona">
-                    <?php if (get_field('barrio')) {
-                        ?>
-                        <h3><span>Barrio: </span><?php the_field('barrio') ?></h3>
-                    <?php }
-                    ?>
-                </div>
+
 
                 <h3 class="propiedad-precio"><?php the_field('moneda'); ?> <?php echo number_format(get_field('precio'), 0, ',', '.'); ?></h3>
 
@@ -81,10 +81,11 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
 
                 <h3>Si te interesó, dejanos tus datos, te vamos a contactar a la brevedad.</h3>
                 <div class="ajaxing">
-                    <img src="<?php echo get_template_directory_uri() . '/img/loader.png' ?>" alt="Loading"/>
+                    <span></span>
                 </div>
 
-                <form id="form-contacto-propiedad" method="post" action="<?php echo admin_url('admin-ajax.php'); ?>">
+                <form id="form-contacto-propiedad" method="post">
+                    <input type="text" name="sex" placeholder="Sexo" value=""/>
                     <input type="hidden" name="propiedad" value="<?php the_title(); ?>"/>
                     <input type="hidden" name="action" value="propiedad"/>
                     <input type="text" name="nombre" placeholder="Nombre y apellido"/>
@@ -111,25 +112,37 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
 
         </div>
         <div class="col-md-3 propiedad-sidebar">
-            <div class="">
+            <div class="propiedad-fb">
                 <div class="fb-page" data-href="https://www.facebook.com/experienciasdigitales" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/experienciasdigitales" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/experienciasdigitales">WORQ</a></blockquote></div>
             </div>
 
+            <div class="propiedades-recomendadas">
+                <h1>Propiedades recomendadas</h1>
+
+                <ul>
+                    <li>
+                        <a href='#' class="propiedad-recomendada">
+                            <h5>Rosario, Santa fe.</h5>
+                            <h3>Av. San Martin 2950. Piso 5 Dto:A.</h3>
+                            <h4>$4.500</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='#' class="propiedad-recomendada">
+                            <h5>Rosario, Santa fe.</h5>
+                            <h3>Av. San Martin 2950. Piso 5 Dto:A.</h3>
+                            <h4>$4.500</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 </article><!-- #post-## -->
+
+
+
 
 
 <div id="fb-root"></div>

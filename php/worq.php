@@ -1,11 +1,10 @@
 <?php
 
-include_once 'worq-slider.php';
 include_once 'worq-propiedades.php';
 
 
 /*
- * IMAGEN SIZE THUMB PROPIEDAD PEQUEña
+ * IMAGEN SIZE THUMB PROPIEDAD PEQUE
  */
 
 add_image_size('thumb-propiedad', 388, 214, TRUE);
@@ -94,9 +93,69 @@ add_filter('acf/settings/show_admin', '__return_false');
 include_once( get_template_directory() . '/php/advanced-custom-fields-worq/acf.php');
 
 
-function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyDgf-N1irsVUgupvllDsSa533VNJHzIeTo');
+
+include_once 'worq-slider.php';
+
+/*
+ * BUSQUEDA SELECTOR TEMPLATE
+ */
+
+function template_chooser($template) {
+
+    global $wp_query;
+    $post_type = isset($_GET['post_type']) ? $_GET['post_type'] : '';
+
+    if ($wp_query->is_search && $post_type == 'propiedades') {
+        return locate_template('search-propiedades.php');
+    }
+
+    return $template;
 }
 
-add_action('acf/init', 'my_acf_init');
+add_filter('template_include', 'template_chooser');
 
+
+
+/*
+ * OG META
+ */
+
+//Adding the Open Graph in the Language Attributes
+function add_opengraph_doctype($output) {
+    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+//Lets add Open Graph Meta Info
+
+function insert_fb_in_head() {
+    global $post;
+
+    $default_image = get_template_directory_uri() . '/img/ideale-logo.svg'; //replace this with a default image on your server or an image in your media library
+
+    if (!is_singular()) {
+        //if it is not a post or a page
+
+
+        echo '<meta property="og:type" content="article"/>';
+        echo '<meta property="og:site_name" content="Ideale Propiedades"/>';
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+        echo '<meta property="og:url" content="' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] . '"/>';
+        return;
+    }
+
+    echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+    echo '<meta property="og:type" content="article"/>';
+    echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+    echo '<meta property="og:site_name" content="Ideale Propiedades"/>';
+    if (!has_post_thumbnail($post->ID)) { //the post does not have featured image, use a default image
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+    } else {
+        $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+        echo '<meta property="og:image" content="' . esc_attr($thumbnail_src[0]) . '"/>';
+    }
+    echo "";
+}
+
+add_action('wp_head', 'insert_fb_in_head', 5);

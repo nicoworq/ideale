@@ -5,6 +5,19 @@
  * and open the template in the editor.
  */
 get_header();
+
+
+$args = array(
+    'posts_per_page' => 10,
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'category' => 6,
+    'post_type' => 'propiedad',
+    'post_status' => 'publish',
+    'suppress_filters' => true
+);
+
+$posts_array = get_posts($args);
 ?>
 
 <section id="venta" class="page-header">
@@ -26,116 +39,44 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="form-buscar-propiedad">
-                    <input type="text" placeholder="Buscar"/>
+                <form id="form-buscar-propiedad" role="search" action="<?php echo site_url('/'); ?>" method="get">
+                    <input type="text" name='s' placeholder="Buscar"/>
+                    <input type="hidden" name="post_type" value="propiedades" />
                 </form>
             </div>
 
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <a href="#" class="propiedad propiedad-listado">
-                    <div class="propiedad-imagen" style="background-image: url(<?php echo get_template_directory_uri() . '/img/img-propiedad.jpg' ?>)">
 
-                        <div class="propiedad-triangulo1"></div>
-                        <div class="propiedad-triangulo2"></div>
 
-                        <div class="propiedad-tipo-operacion">
-                            Venta 
-                        </div>
-                        <div class="propiedad-precio">
-                            $1.564.500
-                        </div>
+            <?php if (count($posts_array)) : ?>
+
+                <?php foreach ($posts_array as $propiedad) { ?>
+
+                    <?php
+                    global $post;
+                    $post = $propiedad;
+                    ?>
+                    <div class="col-md-4">
+                        <?php get_template_part('template-parts/content', 'propiedad-listado'); ?>
                     </div>
 
-                    <div class="propiedad-datos">
-                        <div class="propiedad-ubicacion">
-                            Rosario, Santa Fé.
-                        </div>
-                        <div class="propiedad-direccion">
-                            Av. San Martin 2950.
-                            Piso 5 Dto:A.
-                        </div>
-                        <ul class="propiedad-info">
-                            <li class="propiedad-zona">
-                                <span class="icono-zona"></span> Centro
-                            </li>
-                            <li class="propiedad-superficie">
-                                <span class="icono-medida"></span>140 mts2 | Dormitorios: 3
-                            </li>
+                    <?php
+                };
+                wp_reset_postdata();
+                ?>
 
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="propiedad propiedad-listado">
-                    <div class="propiedad-imagen" style="background-image: url(<?php echo get_template_directory_uri() . '/img/img-propiedad2.jpg' ?>)">
 
-                        <div class="propiedad-triangulo1"></div>
-                        <div class="propiedad-triangulo2"></div>
+            <?php else : ?>
 
-                        <div class="propiedad-tipo-operacion">
-                            Venta 
-                        </div>
-                        <div class="propiedad-precio">
-                            $1.564.500
-                        </div>
-                    </div>
+                <?php get_template_part('template-parts/content', 'noprop'); ?>
 
-                    <div class="propiedad-datos">
-                        <div class="propiedad-ubicacion">
-                            Rosario, Santa Fé.
-                        </div>
-                        <div class="propiedad-direccion">
-                            Avenida Pellegrini 1230.
-                        </div>
-                        <ul class="propiedad-info">
-                            <li class="propiedad-zona">
-                                <span class="icono-zona"></span> Centro
-                            </li>
-                            <li class="propiedad-superficie">
-                                <span class="icono-medida"></span>140 mts2 | Dormitorios: 3
-                            </li>
+            <?php endif; ?>
 
-                        </ul>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="propiedad propiedad-listado">
-                    <div class="propiedad-imagen" style="background-image: url(<?php echo get_template_directory_uri() . '/img/img-propiedad3.jpg' ?>)">
-                        <div class="propiedad-triangulo1"></div>
-                        <div class="propiedad-triangulo2"></div>
 
-                        <div class="propiedad-tipo-operacion">
-                            Venta 
-                        </div>
-                        <div class="propiedad-precio">
-                            $1.564.500
-                        </div>
-                    </div>
 
-                    <div class="propiedad-datos">
-                        <div class="propiedad-ubicacion">
-                            Rosario, Santa Fé.
-                        </div>
-                        <div class="propiedad-direccion">
-                            Avenida del Rosario 2950.
-                            Piso 5 Dto:A.
-                        </div>
-                        <ul class="propiedad-info">
-                            <li class="propiedad-zona">
-                                <span class="icono-zona"></span> Centro
-                            </li>
-                            <li class="propiedad-superficie">
-                                <span class="icono-medida"></span>140 mts2 | Dormitorios: 3
-                            </li>
 
-                        </ul>
-                    </div>
-                </a>
-            </div>
+
 
 
         </div>

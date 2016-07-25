@@ -131,8 +131,8 @@ function ideale_scripts() {
 
     //wp_enqueue_script('ideale-modernzr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js', array(), '20151215', false);
     wp_enqueue_script('ideale-plugins', get_template_directory_uri() . '/js/plugins.min.js', array('jquery'), '20151215', true);
-    wp_enqueue_script('ideale-scripts', get_template_directory_uri() . '/js/main.min.js', array('jquery'), '20151215', true);
-    wp_localize_script('ideale-scripts', 'Villber', array('ajaxUrl' => admin_url('admin-ajax.php'), 'themeUrl' => get_stylesheet_directory_uri()));
+    wp_enqueue_script('ideale-scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151215', true);
+    wp_localize_script('ideale-scripts', 'Ideale', array('ajaxUrl' => admin_url('admin-ajax.php'), 'themeUrl' => get_stylesheet_directory_uri()));
 }
 
 add_action('wp_enqueue_scripts', 'ideale_scripts');
@@ -164,16 +164,10 @@ add_action('wp_enqueue_scripts', 'ideale_scripts');
 
 
 /*
- * AJAX FORM CONTACTO
+ * AJAX SEND MAIL
  */
 
-require_once get_template_directory() . '/php/ajax-form-contacto.php';
-
-/*
- * AJAX FORM NEWSLETTER
- */
-
-require_once get_template_directory() . '/php/ajax-form-newsletter.php';
+require_once get_template_directory() . '/php/ajax-contact-mail.php';
 
 
 
@@ -221,61 +215,6 @@ function sdt_remove_ver_css_js($src) {
         $src = remove_query_arg('ver', $src);
     return $src;
 }
-
-// Register Custom Post Type
-function categoria_ideale() {
-
-    $labels = array(
-        'name' => _x('Categorias Productos', 'Post Type General Name', 'text_domain'),
-        'singular_name' => _x('Categoría Producto', 'Post Type Singular Name', 'text_domain'),
-        'menu_name' => __('Categorias Productos', 'text_domain'),
-        'name_admin_bar' => __('Categorias Productos', 'text_domain'),
-        'archives' => __('Categorias Productos', 'text_domain'),
-        'parent_item_colon' => __('Categoría padre', 'text_domain'),
-        'all_items' => __('Todas las Categoría', 'text_domain'),
-        'add_new_item' => __('Agregar Categoría', 'text_domain'),
-        'add_new' => __('Agregar nueva', 'text_domain'),
-        'new_item' => __('Agregar Categoría', 'text_domain'),
-        'edit_item' => __('Editar Categoría', 'text_domain'),
-        'update_item' => __('Actualizar Categoría', 'text_domain'),
-        'view_item' => __('Ver Categoría', 'text_domain'),
-        'search_items' => __('Buscar Categoría', 'text_domain'),
-        'not_found' => __('No encontrado', 'text_domain'),
-        'not_found_in_trash' => __('No encontrado', 'text_domain'),
-        'featured_image' => __('Imagen destacada', 'text_domain'),
-        'set_featured_image' => __('Setear Imagen destacada', 'text_domain'),
-        'remove_featured_image' => __('Eliminar Imagen destacada', 'text_domain'),
-        'use_featured_image' => __('Usar como Imagen destacada', 'text_domain'),
-        'insert_into_item' => __('Insertar en Categoría', 'text_domain'),
-        'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
-        'items_list' => __('Items list', 'text_domain'),
-        'items_list_navigation' => __('Items list navigation', 'text_domain'),
-        'filter_items_list' => __('Filter items list', 'text_domain'),
-    );
-    $args = array(
-        'label' => __('Categoría Producto', 'text_domain'),
-        'description' => __('Categorias Productos de Villber', 'text_domain'),
-        'labels' => $labels,
-        'supports' => array('title', 'editor', 'author', 'thumbnail',),
-        'hierarchical' => false,
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-clipboard',
-        'show_in_admin_bar' => true,
-        'show_in_nav_menus' => true,
-        'can_export' => true,
-        'has_archive' => false,
-        'exclude_from_search' => true,
-        'publicly_queryable' => true,
-        'capability_type' => 'page',
-    );
-    register_post_type('categoria-productos', $args);
-}
-
-add_action('init', 'categoria_ideale', 0);
-
 
 
 include_once 'php/worq.php';

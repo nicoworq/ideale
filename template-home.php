@@ -26,23 +26,9 @@ get_header();
                 <h2>Soluciones Inmobiliarias<br/>
                     para confiar tu nuevo comienzo</h2>
             </div>
-        </div>
-        <div class="row">
-
-            <div class="col-md-4">
-                <h3>Transparencia</h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Eficiencia</h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-            </div>
-            <div class="col-md-4">
-                <h3>Rentabilidad</h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-            </div>
-        </div>
+        </div>       
     </div>
+    <?php get_template_part('template-parts/content', 'valores'); ?>
 </section>
 
 

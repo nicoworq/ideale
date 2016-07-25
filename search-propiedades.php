@@ -1,48 +1,26 @@
 <?php
 /**
- * The main template file.
+ * The template for displaying search results pages.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package Villber
  */
-
-get_header(); ?>
-
-
-<section id="header-blog">  
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Actualidad</h2>
-            </div>
-        </div>
-    </div>
-</section>
+get_header();
+?>
 
 
-<section id="blog-suscribe">
-    <div class="ajaxing"><span></span></div>
+<section id="venta" class="page-header">
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4>Seguí la actulidad inmobiliaria en tu mail y conocé nuestras nuevas propiedades</h4>
-
-                <form id="form-suscribir-blog">
-                    <input type="hidden" name="suscribir" value="<?php echo wp_create_nonce('news-nonce') ?>"/>
-                    <input type="hidden" name="action" value="newsletter"/>
-                    <input type="text" name="sex" placeholder="Sexo" value=""/>
-                    <input type="email" placeholder="Ingresa tu email..." name="email"/>
-                    <button class="bt-site bt-site-violet">Suscribirme</button>
-                </form>
+                <h1>Busqueda: <br/>
+                    </h1>
             </div>
         </div>
     </div>
+
 
 </section>
 <div class="blog">
@@ -80,7 +58,5 @@ get_header(); ?>
     </div>
 </div>
 
-
 <?php
-get_sidebar();
 get_footer();

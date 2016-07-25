@@ -37,7 +37,7 @@ get_header();
 
                     <input type="hidden" name="suscribir" value="<?php echo wp_create_nonce('news-nonce') ?>"/>
                     <input type="hidden" name="action" value="newsletter"/>
-                    <input type="text" name="sexo" placeholder="Sexo" value=""/>
+                    <input type="text" name="sex" placeholder="Sexo" value=""/>
                     <input type="email" placeholder="Ingresa tu email..." name="email"/>
                     <button class="bt-site bt-site-violet">Suscribirme</button>
                 </form>
