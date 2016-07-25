@@ -8,103 +8,59 @@
 get_header();
 ?>
 
-<section id="institucional" class="fullheight intro-module">
+<section id="institucional" class="page-header">
 
-    <div class="intro-module-inner">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <h1>Acerca <br class="institucional-mobile"/> de Villber </h1>
-
-                    <h2>Expertos <br class="institucional-mobile"/> en equipamientos <br class="institucional-mobile"/> comerciales</h2>
-                    <div class="row institucional-desktop" >
-                        <div class="col-md-4">
-                            <p>
-                                Buscamos equipar su negocio en materia de góndolas, racks, check outs, vinotecas, heladeras y cámaras frigoríficas. 
-                                Ofrecemos la más amplia variedad de artículos para exhibición de mercadería
-                                y almacenamiento.
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>
-                                Equipamos todo tipo de comercios, como supermercados, carnicerías, pollerías, panaderías, depósitos y galpones en cualquier parte del país.
-                                No dudes en consultarnos.
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <p>
-                                Le damos excelentes plazos de pago,
-                                y además puede comprar también con el plan Ahora 12. 
-
-                                ¡Su consulta no molesta, estamos para responder sus dudas!
-                            </p>
-                        </div>
-                    </div>
-
-                    <a class="bt-sitio bt-cta institucional-desktop" href="#">Contáctenos</a>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>PREOCUPATE <br/>
+                    POR DISFRUTAR</h1>
             </div>
         </div>
-    </div>
-    <!--
-    <ul id="slider-home-slides">
-        <li>
-          
-        </li>
-
-    </ul>-->
-
-
-    <div class="scrollDown">
-        <div class="icon-scroll"></div>
     </div>
 
 
 </section>
 
-<div class="institucional-mobile institucional-mobile-container">
+
+<section id="institucional-contenido">
     <div class="container">
-        <div class="row " >
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Institucional</h5>
+                <h4>Propiedades a tu medida</h4>
+            </div>
             <div class="col-md-4">
                 <p>
-                    Buscamos equipar su negocio en materia de góndolas, racks, check outs, vinotecas, heladeras y cámaras frigoríficas. 
-                    Ofrecemos la más amplia variedad de artículos para exhibición de mercadería
-                    y almacenamiento.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </div>
             <div class="col-md-4">
                 <p>
-                    Equipamos todo tipo de comercios, como supermercados, carnicerías, pollerías, panaderías, depósitos y galpones en cualquier parte del país.
-                    No dudes en consultarnos.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </div>
-            <div class="col-md-4">
-                <p>
-                    Le damos excelentes plazos de pago,
-                    y además puede comprar también con el plan Ahora 12. 
 
-                    ¡Su consulta no molesta, estamos para responder sus dudas!
-                </p>
-
-            </div>
-            <div class="col-md-4">
-                <p>¡Su consulta no molesta, estamos para responder sus dudas!</p>
-
-            </div>
         </div>
     </div>
-</div>
+</section>
 
-<?php get_template_part('template-parts/content', '30-anios'); ?>
 
+<section id="institucional-contenido2">
+    <h3>Estamos en cada detalle</h3>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </p>
+
+    <a href="#" class="bt-sitio">
+        Conocé nuestros servicios
+    </a>
+</section>
+
+<?php get_template_part('template-parts/content', '12-anios'); ?>
 <?php get_template_part('template-parts/content', 'form-contacto'); ?>
 
-<section id="home-map">
 
-</section>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDgf-N1irsVUgupvllDsSa533VNJHzIeTo"></script>
 
 <?php
 

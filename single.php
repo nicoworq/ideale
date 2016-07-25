@@ -4,40 +4,40 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Villber
+ * @package Ideale
  */
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
 
-        <?php
-        while (have_posts()) : the_post();
+                    <?php
+                    while (have_posts()) : the_post();
 
-            if (get_post_type() === 'categoria-productos') {
+                        if (get_post_type(get_the_ID()) !== 'propiedad') {
 
-                get_template_part('template-parts/content', 'categoria-productos');
-            }
+                            get_template_part('template-parts/content', 'single');
+                        } else {
+
+                            get_template_part('template-parts/content', 'single-propiedad');
+                        }
+
+                    endwhile; // End of the loop.
+                    ?>
+
+                </main><!-- #main -->
+            </div><!-- #primary -->
+        </div>
+    </div>
+</div>
 
 
-        //the_post_navigation();
-
-
-
-        endwhile; // End of the loop.
-        ?>
-
-    </main><!-- #main -->
-</div><!-- #primary -->
 
 <?php
+get_template_part('template-parts/content', '12-anios');
 get_template_part('template-parts/content', 'form-contacto');
-?>
-<section id="home-map">
-
-</section>
-
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDgf-N1irsVUgupvllDsSa533VNJHzIeTo"></script>
-<?php
 get_footer();

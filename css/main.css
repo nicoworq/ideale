@@ -55,7 +55,7 @@ body{
 }
 
 body.single{
-    background: white;
+    background: #fafafa;
 }
 
 body.noScroll{
@@ -66,19 +66,34 @@ h1,h2,h3,h4,p{
     cursor: default;
 }
 
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
 /* -----------
  *  NAVEGACION SUPERIOR
  * ----------- */
 
 .navbar{
     padding-top: 57px;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 12;
     right: 0;
+    background: #fafafa;
+    padding-bottom: 30px;
 }
-
+.home .navbar{
+    position: absolute;
+    background: none;
+}
 .secondary-nav{
     position: absolute;
     top: 26px;
@@ -114,7 +129,7 @@ h1,h2,h3,h4,p{
 }
 
 
-#navbar ul > li a:hover, #navbar ul > li.current-menu-item a{background:#ba2016;text-decoration: none;}
+#navbar ul > li a:hover, #navbar ul > li.current-menu-item a{/* background:#ba2016; */text-decoration: none;color: #5896a4;}
 
 
 
@@ -710,7 +725,7 @@ h1,h2,h3,h4,p{
     transform: scale(1.05) translateX(20px);
 }
 .servicio-home-bg{
-        transition: .4s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: .4s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .servicio-home-contenido{
     position: absolute;
@@ -924,7 +939,7 @@ input[name=sex]{position: absolute; top: -2000px; left: -9999px}
 }
 
 #form-suscribir-footer button:hover{
-    border-radius: 35px;
+    /* border-radius: 35px; */
 }
 @media(max-width:1200px){
     #form-suscribir-footer input[type=email]{
@@ -1016,8 +1031,7 @@ footer .menu-menu-1-container{
 }
 #navbar-footer ul li a:hover{
     text-decoration: none;
-    background: #ba2016;
-    color:white;
+    color: #5896a4;
 }
 
 
@@ -1146,7 +1160,7 @@ footer .menu-menu-1-container{
 .bt-sitio:hover{
     text-decoration: none;
     color: white;
-    background: #f03c12;
+    background: #54afc5;
     border-radius: 4px;
 }
 .bt-cta{
@@ -1171,13 +1185,14 @@ footer .menu-menu-1-container{
 
 
 .section-contacto{
-    background: url(../img/contacto-bg.jpg)no-repeat top center;
+    background: url(../img/contacto-bg.jpg)no-repeat top center white;
     background-size: auto;
     text-align: left;
     color: white;
     position: relative;
-    padding-top: 215px;
+    padding-top: 50px;
     z-index: 10;
+    padding-bottom: 50px;
 }
 .section-contacto h1{
     font-size: 56px;
@@ -1189,7 +1204,9 @@ footer .menu-menu-1-container{
     font-size: 16px;
     font-weight: 400;
     line-height: 25px;
-    color: #646464;
+    color: white;
+    margin-top: 7px;
+    margin-bottom: 42px;
 }
 
 .section-contacto p{
@@ -1202,13 +1219,13 @@ footer .menu-menu-1-container{
 }
 
 #form-contacto{
-    margin-top: 36px;
+    margin-top: 33px;
     padding: 0 0 0 106px;
     text-align: center;
     margin-right: -15px;
 }
 .fila-contacto{
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     overflow: hidden;
     clear: both;
 }
@@ -1252,13 +1269,18 @@ input[name=sex]{
     margin-top: 3px;
 }
 
-
+#form-contacto button{
+    font-size: 17px;
+    background: #0c2c34;
+    margin-top: 5px;
+    padding: 13px 34px;
+}
 .input-error {
     border-color: #FF9090!important;
 }
 
 #mapa-contacto {
-    margin-top: 32px;
+    margin-top: 53px;
 }
 
 
@@ -1346,7 +1368,7 @@ input[name=sex]{
 }
 .datos-contacto li {
     color: #FFF;
-    margin-bottom: 19px;
+    margin-bottom: 16px;
     font-size: 14px;
 }
 .contacto-icon {
@@ -1483,9 +1505,7 @@ input[name=sex]{
  *  INTRO MODULE
  * ----------- */
 
-.fullheight{
-    height: 100vh;
-}
+
 
 .intro-module{
     /*padding: 298px 0 153px;*/
@@ -1672,45 +1692,112 @@ input[name=sex]{
 
 }
 
+/* -----------
+ *  PAGE HEADER
+ * ----------- */
+
+.page-header{
+    height: 493px;
+    color: white;
+    padding-top: 100px;
+    position: relative;
+}
+.page-header h1{
+    font-size: 66px;
+    font-weight: 300;
+    margin-top: 0;
+    text-align: left;
+    line-height: 77px;
+    margin-top: 120px;
+    text-transform: uppercase;
+}
 
 /* -----------
  *  INSTITUCIONAL
  * ----------- */
 
 #institucional{
-    background: url(../img/institucional-bg.jpg)no-repeat 50%;
-    background-size: cover;
-    background-color: #270504;
-    text-align: center;
-    color: white;
-    padding-top: 100px;
-    position: relative;
+
+    z-index: 200;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#409aef+0,6adffe+100 */
+    background-color:  #409aef; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #409aef 0%, #6adffe 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #409aef 0%,#6adffe 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #409aef 0%,#6adffe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#409aef', endColorstr='#6adffe',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+#institucional:before{
+    content: ' ';
+    background: url(../img/imagen_institucional-min.png) no-repeat;
+    background-size: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    background-position: 99% 23px;
 }
 
-#institucional h1{
+
+
+
+
+#institucional-contenido{
+    padding-top: 70px;
+    background: white;
+    padding-bottom: 60px;
+}
+
+#institucional-contenido h4{
+    color: #232323;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#institucional-contenido h5{
+    color: #599eaf;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#institucional-contenido p{
+    color: #777777;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    margin-top: 1px;
+}
+
+#institucional-contenido2{
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    background: white;
+    padding-top: 73px;
+    padding-bottom: 99px;
+}
+#institucional-contenido2 h3{
     font-size: 56px;
     font-weight: 300;
-    text-shadow: 0px 0px 5px #060407;
-    margin-top: 0;
-    margin-bottom: 60px;
+    color: #3b3e46;
+    margin: 0;
+    margin-bottom: 30px;
 }
-#institucional h2{
-    font-size: 38px;
-    font-weight: 300;
-    text-shadow: 0px 0px 5px #060407;
-}
-#institucional p{
+#institucional-contenido2 p{
+    max-width: 732px;
+    margin: 0 auto;
     font-size: 17px;
-    font-weight: 300;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 25px;
+    line-height: 34px;
+    color: #3b3e46;
 }
-#institucional .bt-sitio{
-    margin-top: 50px;
-} 
-.institucional-mobile{display: none;}
+#institucional-contenido2 a{
+    font-size: 17px;
+    margin-top: 36px;
+    padding: 13px 31px;
+}
 
 @media(max-width:991px){
 
@@ -1906,73 +1993,6 @@ input[name=sex]{
 
 
 
-/* -----------
- *  PRODUCTOS
- * ----------- */
-
-#productos{}
-
-#productos-header{
-    text-align: center;
-    background: url(../img/productos-header-bg.jpg) 50% no-repeat #2d2d2d;
-    background-size: cover;
-    padding: 192px 0;
-    height: 540px;
-}
-#productos-header h1{
-    font-size: 56px;
-    font-weight: 300;
-    color: white;
-}
-
-#productos-intro{
-    background: url(../img/productos-intro-bg.jpg)50% no-repeat white;
-    background-size: cover;
-    padding-bottom: 40px;
-}
-#productos-intro h3{
-    font-size: 42px;
-    color: #2e2f33;
-    font-weight: 300;
-}
-#productos-intro p{
-    font-size: 15px;
-    color: #616267;
-    line-height: 28px;
-    padding-right: 60px;
-}
-
-#productos-listado {
-    background: #FFF;
-}
-
-.producto-ideale{
-    border-top: 1px solid #f3f3f3;
-    padding: 20px 0 30px;
-}
-.producto-ideale h1{
-    font-size: 32px;
-    font-weight: 300;
-    color: #9397a2;
-    margin-top: 0;
-}
-
-.producto-ideale .producto-imagenes{
-    list-style: none;
-    padding: 0;
-}
-.producto-ideale .producto-imagenes li{
-    display: inline-block;
-    width: 25%
-}
-.producto-ideale .producto-imagenes li a{
-    width: 100%;
-    height: 190px;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
 /* -----------
  *  PROPIEDAD DESTACADA HOME 
@@ -2108,7 +2128,9 @@ input[name=sex]{
  *  NOTA BLOG
  * ----------- */
 
-.nota-blog{}
+.nota-blog{
+    display: inline-block;
+}
 .nota-blog h3{
     margin: 0;
     font-size: 21px;
@@ -2116,10 +2138,13 @@ input[name=sex]{
     font-weight: 400;
     margin: 31px 0;
     line-height: 26px;
+    cursor: pointer;
+    min-height: 78px;
 }
 .nota-blog-bg{
     height: 240px;
-
+    background-position: 50%;
+    background-size: cover;
 }
 .nota-ver-mas{
     padding-right: 20px;
@@ -2128,4 +2153,586 @@ input[name=sex]{
     font-weight: 600;
     background: url(../img/flecha-link.png)no-repeat 29% 50%;
     letter-spacing: 0.2px;
+}
+
+
+/* -----------
+ *  BLOG
+ * ----------- */
+
+#header-blog{
+    background: url(../img/header-blog-bg.jpg) 50% #8e8e8e no-repeat;
+    background-size: cover;
+    height: 379px;
+    width: 100%;
+}
+
+#header-blog h2{
+    color: white;
+    font-size: 60px;
+    font-weight: 300;    
+    text-transform: uppercase;
+    margin-top: 85px;
+}
+
+
+#blog-suscribe{
+    padding: 10px 0 ;
+    background: #5ca0ae 50% no-repeat;
+
+    position: relative;
+}
+#blog-suscribe h4{
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin: 0;
+    margin-top: 11px;
+    letter-spacing: 1px;
+}
+#blog-suscribe h4 span{
+    color: #fed700;
+}
+
+
+
+#form-suscribir-blog{
+    background: white;
+    float: right;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+
+}
+#form-suscribir-blog input[name=sexo]{
+    position: absolute;
+    top: -99999px;
+    right: -99999px;
+}
+
+#form-suscribir-blog input{
+    border: none;
+    padding-left: 15px;
+    outline: none;
+    float: left;
+    padding: 11px 40px 5px 15px;
+
+}
+#form-suscribir-blog button{
+    color: white;
+    font-size: 14px;
+    background: #232323;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    float: right;
+    height: 40px;
+    padding: 0 20px;
+}
+
+/* -----------
+ *  BLOG COLS
+ * ------------ */
+
+
+
+.blog{
+    background: white;
+
+}
+.blog #primary.blog-page{
+    width: 77.67%;
+    float: left;
+    padding-right: 50px;
+    padding-top: 55px;
+    font-family: Source Sans Pro;
+}
+
+.blog #secondary{
+    width: 22.33%;
+    float: left;
+    padding-top: 55px;
+    font-family: Source Sans Pro;
+}
+
+
+/* -----------
+ *  NOTA BLOG
+ * ----------- */
+article.post{
+    clear: both;
+    margin-bottom: 90px;
+}
+
+
+.posted-on{
+    color: #6d6d6d;
+    font-size: 14px;
+}
+.posted-on a{
+    color: #343434;
+}
+.posted-on a time{
+    color: #343434;
+}
+.single-post  header.entry-header, .blog  header.entry-header{
+    background: white;
+}
+.single-post .entry-title, .blog .entry-title{
+    border-bottom: 1px solid #4e95b4;
+    margin: 0;
+    line-height: 45px;
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 42px;
+    font-weight: 400;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.single-post  .entry-title a{
+
+}
+
+aside.entry-meta{
+    width: 24%;
+    float:left;
+    margin: 0;
+}
+
+aside.entry-meta > div{
+    margin-bottom: 20px
+}
+
+aside.entry-meta .author{
+
+}
+aside.entry-meta .author img{
+    width: 87px;
+    height: 87px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+aside.entry-meta .label{
+    font-size: 14px;
+    color: #9c9c9c;
+}
+aside.entry-meta a{
+    color: #5ca0ae;
+}
+
+.entry-header a{
+    display: inline-block;
+    text-decoration: none;
+}
+.entry-content{
+    width: 76%;
+    float: left;
+    margin: 0;
+}
+.entry-excerpt{
+    color: #000000;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 31px;
+}
+.entry-thumbnail{
+    height: 400px;
+    width: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+
+
+/* -----------
+ *  SIDEBAR
+ * ----------- */
+
+
+.widget-title{
+    margin: 0;
+    color: #000000;
+    font-size: 17px;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.widget-area aside.widget{
+    margin-bottom: 25px;
+}
+
+
+/* -----------
+ *  ULTIMOS POSTEOS
+ * ----------- */
+
+.widget_recent_entries{}
+.widget_recent_entries ul{}
+.widget_recent_entries ul li{
+    margin-bottom: 25px;
+}
+.widget_recent_entries ul li a{
+    color: #686868;
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: underline;
+    display: inline-block;
+    line-height: 20px;
+}
+
+
+
+/* -----------
+ *  WIDGET SEARCH
+ * ----------- */
+
+.widget_search{
+    margin: 30px 0;
+}
+.widget_search span.screen-reader-text{
+    display: none;
+}
+
+.widget_search form{
+    background: #ececec;
+    border-radius: 3px;
+    overflow: hidden;
+
+}
+.widget_search input[type=search]{
+    border:none;
+    display: inline-block;
+    background: #ececec;
+    padding: 16px 10px 6px;
+    outline: none;
+    font-size: 13px;
+    color: #adadad;
+    font-weight: 400;
+}
+.widget_search input[type=submit]{
+    background: url(../img/search.svg) 50% no-repeat #177e93;
+    background-size: 28px;
+    border: none;
+    font-size: 0;
+    height: 45px;
+    width: 50px;
+    float: right;
+    transition: .15s all ease-in;
+}
+.widget_search input[type=submit]:hover{
+    background-color: #1698b3;
+}
+
+
+/* -----------
+ *  WIDGET CATEGORIA BLOG
+ * ----------- */
+
+
+.widget_categories ul li:before{
+    display: none;
+}
+.widget_categories a{
+    color: #686868;
+    font-size: 17px;
+    font-weight: 400;
+    display: block;
+    padding: 6px 0;
+}
+
+
+/* -----------
+ *  VENTA
+ * ----------- */
+#venta{
+    background: url(../img/venta-bg.jpg)50% no-repeat;
+    background-size: cover;
+}
+
+#venta-contenido{
+    background: white;
+}
+
+
+/* -----------
+ *  FORM BUSCAR PROP
+ * ----------- */
+
+#form-buscar-propiedad{
+    padding: 30px 0;
+}
+#form-buscar-propiedad input{
+    font-size: 14px;
+    color: #a3a3a3;
+    border-radius: 3px;
+    border: 2px solid #e2e2e2;
+    background: url(../img/buscar-input.png) 95% 50% white no-repeat;
+    padding: 10px;
+    min-width: 270px;
+}
+
+/* -----------
+ *  PROPIEDAD LISTADO
+ * ----------- */
+
+
+
+.icono-zona{
+    width: 15px;
+    height: 15px;
+    background: url(../img/icono-zona.png)no-repeat 50%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-right: 9px;
+    margin-top: 4px;
+}
+
+.icono-medida{
+    width: 15px;
+    height: 15px;
+    background: url(../img/icono-medida.png)no-repeat 50%;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.propiedad-listado{
+    text-decoration: none !important;
+}
+
+.propiedad-listado .propiedad-imagen , .propiedad-listado .propiedad-datos{
+    display: block;
+    width: 100%;
+    position: relative;
+
+}
+.propiedad-listado .propiedad-imagen{
+    min-height: 200px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.propiedad-listado .propiedad-tipo-operacion{
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+    color: white;
+    position: absolute;
+    bottom: 56px;
+    background: none;
+    right: 20px;
+    margin: 0;
+    padding-right: 0;
+}
+.propiedad-listado .propiedad-precio{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    margin: 0;
+}
+
+.propiedad-listado .propiedad-datos{
+    background: #e2e2e2;
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-right: 50px;
+    padding-bottom: 13px;
+    margin-top: -10px;
+}
+.propiedad-listado .propiedad-ubicacion{
+    color: #535353;
+    font-size: 12px;
+}
+.propiedad-listado .propiedad-direccion{
+    color: #1d91ae;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 8px 0 16px;
+    min-height: 47px;
+}
+
+.propiedad-listado .propiedad-info li{
+    color: #232323;
+    font-size: 15px;
+    display: inline-block;
+    margin-right: 15px;
+}
+.propiedad-triangulo1{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 86px 228px 18px 0;
+    border-color: transparent #480870 transparent transparent;
+    -webkit-transform:rotate(360deg);
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+}
+.propiedad-triangulo2{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 29px 0 0px 379px;
+    border-color: transparent transparent transparent #e2e2e2;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+
+/* -----------
+ *  PROPIEDAD DETALLE
+ * ----------- */
+
+
+.post-propiedad-header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-left, .header-right {
+    width: 50%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+}
+
+.post-propiedad-thumbnail {
+    background-size: cover;
+    height: 460px;
+    width: 100%;
+    background-position: 50%;
+}
+
+.post-propiedad-mapa {
+    width: 100%;
+    height: 100%;
+    height: 460px;
+}
+
+.ideale-map{
+    height: 460px;
+}
+
+.post-propiedad-datos{
+    background: white;
+    padding: 22px 20px;
+    margin-top: 20px;
+}
+
+.post-propiedad-datos .propiedad-ubicacion{
+    color: #a8a8a8;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    font-family: Open Sans;
+}
+
+.post-propiedad-datos .propiedad-direccion{
+    font-weight: 300;
+    font-size: 41px;
+    color: #000000;
+    margin: 0;
+    font-family: Source Sans Pro;
+}
+
+.post-propiedad-datos .propiedad-texto{
+    color: #959595;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.post-propiedad-datos .propiedad-info li{
+    display: inline-block;
+    font-size: 18px;
+    color: #5190a1;
+    font-weight: 300;
+    border-right: 1px solid #3a3c3c;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-family: Source Sans Pro;
+}
+.post-propiedad-datos .propiedad-info li span{
+    color: #3a3c3c;    
+}
+
+.post-propiedad-datos .propiedad-precio{
+    color: #4da8be;
+    font-size: 45px;
+    font-weight: 300;
+    margin: 0;
+    font-family: Source Sans Pro;
+}
+
+.propiedad-contacto{
+    background: white;
+    border-top: 2px solid #edf1f2;
+    padding:0 20px 30px;
+}
+
+.propiedad-contacto h3{
+    color: #4da8be;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+#form-contacto-propiedad{
+    
+}
+#form-contacto-propiedad input[type=text], #form-contacto-propiedad textarea{
+    background: #edf1f2;
+    border-radius: 3px;
+    border:none;
+    width: 100%;
+    color: #636e71;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 15px 10px;
+}
+
+#form-contacto-propiedad input[type=text]{
+    width: 32.37%;
+    margin-right: 1%;
+}
+#form-contacto-propiedad textarea{
+    height: 95px;
+}
+#form-contacto-propiedad input[name=telefono]{
+    margin-right: 0;
+}
+
+#form-contacto-propiedad input[type=submit]{
+    background: #4da8be;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Open Sans;
+    padding: 10px 45px;
+}
+
+.propiedad-sidebar{
+    margin-top: 20px;
+    /* background: white; */
+    /* padding-left: 0; */
+    /* padding-right: 0; */
 }

@@ -14,13 +14,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/img/favicon.png' ?>">
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+        <link rel="profile" href="http://gmpg.org/xfn/11">        
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
         <?php wp_head(); ?>
     </head>
-
 
     <body <?php body_class(); ?>>
 

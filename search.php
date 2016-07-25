@@ -6,43 +6,74 @@
  *
  * @package Villber
  */
+get_header();
+?>
 
-get_header(); ?>
+<section id="header-blog">  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2><?php printf(esc_html__('Resultados para: %s', 'durand'), '<span>' . get_search_query() . '</span>'); ?></h2>
+            </div>
+        </div>
+    </div>
+</section>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) : ?>
+<section id="blog-suscribe">
+    <div class="ajaxing"><span></span></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Seguí la actulidad inmobiliaria en tu mail y conocé nuestras nuevas propiedades</h4>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'durand' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+                <form id="form-suscribir-blog">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+                    <input type="hidden" name="suscribir" value="<?php echo wp_create_nonce('news-nonce') ?>"/>
+                    <input type="hidden" name="action" value="newsletter"/>
+                    <input type="text" name="sexo" placeholder="Sexo" value=""/>
+                    <input type="email" placeholder="Ingresa tu email..." name="email"/>
+                    <button class="bt-site bt-site-violet">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+</section>
+<div class="blog">
+    <div class="container blog">
+        <div class="row">
+            <div class="col-md-12">
 
-			endwhile;
 
-			the_posts_navigation();
+                <div id="primary" class="content-area blog-page">
+                    <main id="main" class="site-main" role="main">
+                        <?php
+                        if (have_posts()) :
 
-		else :
+                            while (have_posts()) : the_post();
 
-			get_template_part( 'template-parts/content', 'none' );
+                                /**
+                                 * Include the Post-Format-specific template for the content.
+                                 * If you want to override this in a child theme, then include a file
+                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                                 */
+                                get_template_part('/template-parts/content');
 
-		endif; ?>
+                            endwhile;
+                        endif;
+                        ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+                    </main><!-- #main -->
+                </div><!-- #primary -->
+
+                <div id="secondary" class="widget-area" role="complementary">
+                    <?php dynamic_sidebar('sidebar-1'); ?>
+                </div><!-- #secondary -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php
-get_sidebar();
 get_footer();

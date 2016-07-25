@@ -17,12 +17,11 @@ get_header();
 
                 <h1>Contáctenos</h1>
 
-                <h2>En Villber trabajamos para brindarle<br/>
-                    el mejor equipamiento para su<br/>
-                    comercio, comience hoy su proyecto.</h2>
+                <h2>En Ideale Propiedades, nos importa tu tranquilidad, es por eso que<br/>
+                    te ofrecemos propiedades a tu medida, sin vueltas ni complicaciones.</h2>
 
                 <ul class="datos-contacto">       
-                    <li><i class="contacto-icon contacto-icon-mail"></i>contacto@villber.com.ar</li>   
+                    <li><i class="contacto-icon contacto-icon-mail"></i>contacto@idealepropiedades.com.ar</li>   
                     <li><i class="contacto-icon contacto-icon-tel"></i>+54 (0341) 4661462</li>
                     <li><i class="contacto-icon contacto-icon-dir"></i>Pte. Roca 6055 Rosario, Santa Fe , Argentina</li>
                 </ul>
@@ -43,16 +42,10 @@ get_header();
                     </div>
 
                     <div class="fila-contacto">
-                        <input type="text" name="empresa" placeholder="Empresa "/>
-                        <input type="text" name="tipo_producto" placeholder="Tipo de Producto"/>
-                    </div>
-
-
-                    <div class="fila-contacto">
                         <textarea name="mensaje" placeholder="Mensaje *"></textarea>
                     </div>
                     <div class="fila-contacto">
-                        <button>Enviar mensaje</button>
+                        <button class="bt-sitio">Enviar consulta</button>
                     </div>
 
                 </form>

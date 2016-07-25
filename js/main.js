@@ -111,8 +111,7 @@
                             index = index - 1;
                             if (!$(selector).eq(index).length)
                                 index = $(selector).length;
-                        }
-                        else
+                        } else
                         {
                             index = index + 1;
                             if (!$(selector).eq(index).length)
@@ -143,39 +142,19 @@
             ]});
 
 
-        /* -----------
-         *  BT INTERESADO CLICK
-         * ----------- */
-
-        $('.interesado').click(function (e) {
-
-            e.preventDefault();
-
-            var producto = $(this).attr('data-producto-interes');
-
-            $('input[name=tipo_producto]').val(producto);
-
-
-            $('html, body').animate({
-                scrollTop: $("#form-contacto-paginas").offset().top
-            }, 1000);
-
-            $('input[name=nombre]').focus();
-            return false;
-
-        });
+        
 
         /* -----------
          *  NEWSLETTER SUSCRIBE
          * ----------- */
-        
-        $('#form-suscribir-footer input[name=email]').focus(function(){
+
+        $('#form-suscribir-footer input[name=email]').focus(function () {
             $('#form-suscribir-footer').addClass('focus');
         });
-        $('#form-suscribir-footer input[name=email]').blur(function(){
+        $('#form-suscribir-footer input[name=email]').blur(function () {
             $('#form-suscribir-footer').removeClass('focus');
         });
-        
+
         $('#form-suscribir-footer input[name=email]').keyup(function () {
             $('#form-suscribir-footer').removeClass('input-error');
         });
@@ -205,61 +184,7 @@
 
         });
 
-        /* -----------
-         *  SUB MENU 
-         * ----------- */
-
-
-        $('#navbar ul li , #footer-menu li').mouseenter(function () {
-            var submenu = $(this).find('.sub-menu');
-            if (submenu.length) {
-                submenu.addClass('visible');
-                $(this).append('<div class="sub-menu-productos-bg"></div>');
-            }
-
-        });
-
-        $('.sub-menu , #footer-menu , #primary-menu').mouseleave(function () {
-            $('.sub-menu').removeClass('visible');
-            $('.sub-menu-productos-bg').remove();
-        });
-
-
-        /* -----------
-         *  SUB MENU PRODUCTOS MOBILE
-         * ----------- */
-
-        $('ul.sub-menu').on('click', '.sub-menu-productos-bg', function () {
-
-            $('.sub-menu').removeClass('visible');
-            $('.sub-menu-productos-bg').remove();
-        });
-
-
-        /*
-         * FADE IN SCROLL DOWN
-         */
-
-        setTimeout(function () {
-            $('.scrollDown').css('opacity', 1);
-        }, 1500);
-
-
-
-
-
-        /*
-         * ACCESOS SERVICIOS CLICK
-         */
-
-        $('.servicio-acceso').click(function () {
-            var servicio = $(this).attr('data-servicio');
-            $('html, body').animate({
-                scrollTop: $('.' + servicio).offset().top - 10
-            }, 1000, 'easeInOutCubic');
-        });
-
-
+       
 
 
         /*
@@ -271,19 +196,14 @@
             $('body').toggleClass('noScroll');
         });
 
-        /*
-         * GALERIA PROYECTO
-         */
-
-        $('#proyecto-galeria ul').slick({prevArrow: $('.gal-prev'), nextArrow: $('.gal-next')});
-
+      
 
         /*
          * MAPA
          */
 
         if ($('#mapa-contacto').length > 0) {
-            var mapOptions = {center: new google.maps.LatLng(-32.975424,-60.6680259), zoom: 12, mapTypeId: google.maps.MapTypeId.ROADMAP, scrollwheel: false};
+            var mapOptions = {center: new google.maps.LatLng(-32.975424, -60.6680259), zoom: 12, mapTypeId: google.maps.MapTypeId.ROADMAP, scrollwheel: false};
             var map = new google.maps.Map(document.getElementById("mapa-contacto-map"), mapOptions);
 
 
@@ -302,25 +222,7 @@
 
         }
 
-        if ($('#home-map').length > 0) {
-            var mapOptions = {center: new google.maps.LatLng(-32.975424,-60.6680259), zoom: 12, mapTypeId: google.maps.MapTypeId.ROADMAP, scrollwheel: false};
-            var map = new google.maps.Map(document.getElementById("home-map"), mapOptions);
-
-
-            var latLngMarker = new google.maps.LatLng(-33.007651, -60.655996, 17);
-            var marker = new google.maps.Marker({
-                position: latLngMarker,
-                map: map,
-                icon: Villber.themeUrl + '/img/map_pin.png',
-                scrollwheel: false
-            });
-
-            google.maps.event.addListener(marker, 'click', function () {
-                map.setZoom(16);
-                map.setCenter(marker.getPosition());
-            });
-
-        }
+  
 
 
 
