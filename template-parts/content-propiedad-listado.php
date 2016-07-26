@@ -11,7 +11,12 @@ $url = $thumb['0'];
         <div class="propiedad-triangulo2"></div>
 
         <div class="propiedad-tipo-operacion">
-            Venta 
+            <?php 
+            $category = get_the_category();
+            
+            echo $category[0]->name
+            
+            ?>
         </div>
         <div class="propiedad-precio">
             <?php the_field('moneda') ?><?php echo number_format(get_field('precio'), 0, ',', '.'); ?>

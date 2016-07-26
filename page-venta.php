@@ -40,8 +40,8 @@ $posts_array = get_posts($args);
         <div class="row">
             <div class="col-md-12">
                 <form id="form-buscar-propiedad" role="search" action="<?php echo site_url('/'); ?>" method="get">
-                    <input type="text" name='s' placeholder="Buscar"/>
-                    <input type="hidden" name="post_type" value="propiedades" />
+                    <input type="text" name='s' placeholder="Buscar" value="<?php echo get_query_var('s')?>"/>
+                    <input type="hidden" name="post_type" value="propiedad" />
                 </form>
             </div>
 

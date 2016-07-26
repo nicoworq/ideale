@@ -105,7 +105,7 @@ function template_chooser($template) {
     global $wp_query;
     $post_type = isset($_GET['post_type']) ? $_GET['post_type'] : '';
 
-    if ($wp_query->is_search && $post_type == 'propiedades') {
+    if ($wp_query->is_search && $post_type == 'propiedad') {
         return locate_template('search-propiedades.php');
     }
 
@@ -113,6 +113,7 @@ function template_chooser($template) {
 }
 
 add_filter('template_include', 'template_chooser');
+
 
 
 

@@ -15,48 +15,52 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Busqueda: <br/>
-                    </h1>
+                <h1>Resultados de búsqueda: <br/>
+                </h1>
             </div>
         </div>
     </div>
 
 
 </section>
-<div class="blog">
-    <div class="container blog">
+
+<section id="venta-contenido">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-
-
-                <div id="primary" class="content-area blog-page">
-                    <main id="main" class="site-main" role="main">
-                        <?php
-                        if (have_posts()) :
-
-                            while (have_posts()) : the_post();
-
-                                /**
-                                 * Include the Post-Format-specific template for the content.
-                                 * If you want to override this in a child theme, then include a file
-                                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                                 */
-                                get_template_part('/template-parts/content');
-
-                            endwhile;
-                        endif;
-                        ?>
-
-                    </main><!-- #main -->
-                </div><!-- #primary -->
-
-                <div id="secondary" class="widget-area" role="complementary">
-                    <?php dynamic_sidebar('sidebar-1'); ?>
-                </div><!-- #secondary -->
+                <form id="form-buscar-propiedad" role="search" action="<?php echo site_url('/'); ?>" method="get">
+                    <input type="text" name='s' placeholder="Buscar" value="<?php echo get_query_var('s')?>"/>
+                    <input type="hidden" name="post_type" value="propiedad"/>
+                </form>
             </div>
         </div>
+        <div class="row">
+
+            <?php
+            if (have_posts()) :
+
+                while (have_posts()) : the_post();
+            
+                     if (get_post_type(get_the_ID()) !== 'propiedad') {
+
+                            get_template_part('template-parts/content', 'single');
+                        }
+            
+                    ?>
+                    <div class="col-md-4">
+                        <?php get_template_part('template-parts/content', 'propiedad-listado'); ?>
+                    </div>
+                    <?php
+                endwhile;
+            else :
+                get_template_part('template-parts/content', 'noprop');
+
+            endif;
+            ?>
+
+        </div>
     </div>
-</div>
+</section>
 
 <?php
 get_footer();
