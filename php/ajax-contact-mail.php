@@ -80,6 +80,7 @@ function enviar_mail_contacto() {
 
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
+    $localidad = filter_input(INPUT_POST, 'localidad', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $mensaje = filter_input(INPUT_POST, 'mensaje', FILTER_SANITIZE_STRING);
 
@@ -104,6 +105,7 @@ function enviar_mail_contacto() {
     $cuerpo_email = "<h3>Nueva Consulta desde el Formulario Web de Ideale</h3>
                     <p>Nombre: <b>{$nombre}</b> </p>                    
                     <p>Email: <b>{$email}</b></p>
+                    <p>Localidad: <b>{$localidad}</b></p>
                     <p>Mensaje: <b>{$mensaje}</b></p>
                     <p>Telefono: <b>{$telefono}</b></p>";
 

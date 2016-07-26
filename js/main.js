@@ -5,6 +5,15 @@
 
 
         /* -----------
+         *  SLICK LIGHTBOX
+         * ----------- */
+
+        $('.header-left').slickLightbox({
+            images: window.imagenesSlick
+        });
+
+
+        /* -----------
          *  TAB SERVICIOS
          * ----------- */
 
@@ -256,7 +265,7 @@
             }
 
 
-            $('#contacto .ajaxing, #form-contacto-paginas .ajaxing').show();
+            $('#contacto .ajaxing, #form-contacto-paginas .ajaxing').fadeIn();
 
             $.post(Ideale.ajaxUrl, $('#form-contacto').serialize(), function (json) {
                 $('#contacto  .ajaxing , #form-contacto-paginas .ajaxing').hide();

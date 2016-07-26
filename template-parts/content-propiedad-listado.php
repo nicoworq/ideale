@@ -11,11 +11,9 @@ $url = $thumb['0'];
         <div class="propiedad-triangulo2"></div>
 
         <div class="propiedad-tipo-operacion">
-            <?php 
+            <?php
             $category = get_the_category();
-            
-            echo $category[0]->name
-            
+            echo $category[0]->name;
             ?>
         </div>
         <div class="propiedad-precio">

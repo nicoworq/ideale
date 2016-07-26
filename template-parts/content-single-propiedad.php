@@ -5,15 +5,40 @@
  * @package Idele
  */
 $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imagen-thumb-propiedad');
+
+//imagenes lightbox galeria
+
+$imgLightbox = array($url_thumb[0]);
 ?>
+
+
 
 <article id="post-<?php the_ID(); ?>" >
 
 
     <div class="post-propiedad-header">
         <div class="header-left">
-            <div class="post-propiedad-thumbnail" style="background-image:url(<?php echo $url_thumb[0] ?>);"></div>           
+            <a href='#' class="post-propiedad-thumbnail" style="background-image:url(<?php echo $url_thumb[0] ?>);"></a>  
+            
+            <div class="post-propiedad-galeria">
+                <?php
+                if (have_rows('galeria')) {
+                    echo "<ul id='slider-galeria'>";
+                    while (have_rows('galeria')) {
+                        the_row();
+                        $imagen = get_sub_field('imagen_propiedad');
+                        $imgLightbox[] = $imagen['url'];
+                        echo "<li class='slide'><a href='#' data-imagelightbox='f'><img src='{$imagen['sizes']['thumbnail']}' alt='Imagen propiedad'/></a></li>";
+                    }
+                    echo "</ul>";
+                }
+                ?>
+            </div> 
+            <script>
 
+                window.imagenesSlick = <?php echo json_encode($imgLightbox); ?>;
+
+            </script>
         </div>
         <div class="header-right">
             <div class="post-propiedad-mapa">
@@ -96,20 +121,6 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
                 </form>
             </div>
 
-            <div class="post-propiedad-galeria">
-                <?php
-                if (have_rows('galeria')) {
-                    echo "<ul id='slider-galeria'>";
-                    while (have_rows('galeria')) {
-                        the_row();
-                        $imagen = get_sub_field('imagen_propiedad');
-                        echo "<li class='slide'><a href='{$imagen['url']}' data-imagelightbox='f'><img src='{$imagen['sizes']['imagen-nota-thumbnail-2']}' alt='Imagen propiedad'/></a></li>";
-                    }
-                    echo "</ul>";
-                }
-                ?>
-            </div>
-
         </div>
         <div class="col-md-3 propiedad-sidebar">
             <div class="propiedad-fb">
@@ -120,20 +131,42 @@ $url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imag
                 <h1>Propiedades recomendadas</h1>
 
                 <ul>
-                    <li>
-                        <a href='#' class="propiedad-recomendada">
-                            <h5>Rosario, Santa fe.</h5>
-                            <h3>Av. San Martin 2950. Piso 5 Dto:A.</h3>
-                            <h4>$4.500</h4>
-                        </a>
-                    </li>
-                    <li>
-                        <a href='#' class="propiedad-recomendada">
-                            <h5>Rosario, Santa fe.</h5>
-                            <h3>Av. San Martin 2950. Piso 5 Dto:A.</h3>
-                            <h4>$4.500</h4>
-                        </a>
-                    </li>
+                    <?php
+                    $args = array(
+                        'post_type' => 'propiedad',
+                        'posts_per_page' => 4,
+                        'meta_key' => 'propiedad_recomendada',
+                        'meta_value' => TRUE,
+                    );
+                    $the_query = new WP_Query($args);
+
+                    if ($the_query->have_posts()) {
+                        $i = 1;
+                        while ($the_query->have_posts()) {
+                            $the_query->the_post();
+                            ?>
+                            <li>
+                                <a href='<?php the_permalink(); ?>' class="propiedad-recomendada">
+                                    <h5><?php the_field('localidad') ?>,&nbsp;<?php the_field('provincia') ?></h5>
+                                    <h3><?php the_title(); ?></h3>
+                                    <h4><?php the_field('moneda'); ?> <?php echo number_format(get_field('precio'), 0, ',', '.'); ?></h4>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <li>
+                            <a href='#' class="propiedad-recomendada">                            
+                                <h3>No hay propiedades.</h3>                            
+                            </a>
+                        </li>
+                        <?php
+                        echo "<h3>No has configurado ningun proyecto para que aparezca en la home.</h3>";
+                    }
+
+                    wp_reset_postdata();
+                    ?>
                 </ul>
             </div>
 

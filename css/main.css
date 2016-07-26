@@ -839,19 +839,19 @@ img{
 
 @media(max-width:991px){
     #home-contenido{
-      
+
     }
 
-   
+
 }
 
 @media(max-width:320px){
 
     #home-contenido h3{
-       
+
     }
     #home-contenido p{
-     
+
     }
 }
 
@@ -1979,7 +1979,9 @@ input[name=sex]{
 }
 .propiedad-imagen{
     display: table-cell;
-    width:68%
+    width:68%;
+    background-size: cover;
+    background-position: 50%;
 }
 .propiedad-tipo-operacion{
     background: white;
@@ -2040,8 +2042,14 @@ input[name=sex]{
     font-weight: 400;
     margin-bottom: 4px;
 }
-.propiedad-info .propiedad-zona{}
-.propiedad-info .propiedad-superficie{}
+#home-propiedad-destacada .propiedad-info .propiedad-zona{
+    background: url(../img/icono-zona.png) no-repeat 0px 50%;
+    padding-left: 22px;
+}
+#home-propiedad-destacada .propiedad-info .propiedad-superficie{
+    background: url(../img/icono-medida.png) no-repeat 0px 50%;
+    padding-left: 22px;
+}
 
 .propiedad-precio{
     color: #292929;
@@ -2573,6 +2581,7 @@ aside.entry-meta a{
     float: left;
     height: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .post-propiedad-thumbnail {
@@ -2580,6 +2589,31 @@ aside.entry-meta a{
     height: 460px;
     width: 100%;
     background-position: 50%;
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+.post-propiedad-galeria{
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+}
+
+#slider-galeria{}
+#slider-galeria li{
+    display: inline-block;
+    margin: 0 7px;
+}
+#slider-galeria li a{
+    width: 82px;
+    display: inline-block;
+    height: 67px;
+    border:1px solid #dde3e5;
+    box-shadow: 0px 0px 1px #dde3e5;
+    overflow: hidden;
 }
 
 .post-propiedad-mapa {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Durand functions and definitions.
  *
@@ -125,9 +126,12 @@ function ideale_scripts() {
 
     wp_enqueue_style('ideale-boot', get_template_directory_uri() . '/css/bootstrap.min.css');
     wp_enqueue_style('ideale-style', get_template_directory_uri() . '/css/main.css');
+
     wp_enqueue_style('ideale-style-ext', get_template_directory_uri() . '/css/externalCss.css');
 
-
+    if (is_single()) {
+        wp_enqueue_style('ideale-slick-theme', get_template_directory_uri() . '/css/slick-theme.css');
+    }
 
     //wp_enqueue_script('ideale-modernzr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js', array(), '20151215', false);
     wp_enqueue_script('ideale-plugins', get_template_directory_uri() . '/js/plugins.min.js', array('jquery'), '20151215', true);
@@ -215,6 +219,5 @@ function sdt_remove_ver_css_js($src) {
         $src = remove_query_arg('ver', $src);
     return $src;
 }
-
 
 include_once 'php/worq.php';

@@ -23,7 +23,7 @@
 
         <nav class="navbar" role="navigation">
             <div class="secondary-nav">
-              (0341) 4661462  -  Pte. Roca 6055 Rosario, Santa Fe.
+              (0341) 4123456  -  Calle de ejemplo 123,  Rosario, Santa Fe.
             </div>
             <div class="container">
                 <div class="col-md-12">
