@@ -125,7 +125,7 @@ function ideale_scripts() {
     wp_enqueue_script('jquery');
 
     wp_enqueue_style('ideale-boot', get_template_directory_uri() . '/css/bootstrap.min.css');
-    wp_enqueue_style('ideale-style', get_template_directory_uri() . '/css/main.css');
+    wp_enqueue_style('ideale-style', get_template_directory_uri() . '/css/main.css?a=b');
 
     wp_enqueue_style('ideale-style-ext', get_template_directory_uri() . '/css/externalCss.css');
 

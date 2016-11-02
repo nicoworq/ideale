@@ -42,7 +42,7 @@ function consulta_propiedad() {
                     <p>Telefono: <b>{$telefono}</b></p>";
 
     $asunto = 'Consulta Propiedad Ideale';
-    enviar_email('Consulta Propiedad desde Web', $cuerpo_email, $asunto);
+    enviar_email('Consulta Propiedad desde Web', $cuerpo_email, $asunto, $nombre, $email );
 }
 
 function suscribir_email() {
@@ -110,7 +110,7 @@ function enviar_mail_contacto() {
                     <p>Telefono: <b>{$telefono}</b></p>";
 
     $asunto = 'Consulta Ideale';
-    enviar_email('Formulario de contacto Ideale', $cuerpo_email, $asunto);
+    enviar_email('Formulario de contacto Ideale', $cuerpo_email, $asunto,$nombre,$email);
 }
 
 function enviar_email($from, $cuerpo_email, $asunto, $replyName = 'Contacto Ideale', $replyEmail = 'contacto@idealepropiedades.com') {
@@ -129,9 +129,9 @@ function enviar_email($from, $cuerpo_email, $asunto, $replyName = 'Contacto Idea
 
     $mail->From = 'formulario@worq.com.ar';
     $mail->FromName = $from;
-    $mail->addAddress($replyEmail, $replyName);
+    $mail->addAddress('contacto@idealepropiedades.com', 'Ideale');
     $mail->addBCC('nicolas@worq.com.ar', 'Nicolas');
-    $mail->addReplyTo('formulario@worq.com.ar', 'Form');
+    $mail->addReplyTo($replyEmail, $replyName);
 
     $mail->isHTML(true);                                  // Set email format to HTML
 

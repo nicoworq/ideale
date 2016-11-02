@@ -1,6 +1,6 @@
 
 <?php
-$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail_size');
+$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
 $url = $thumb['0'];
 ?>
 
@@ -30,7 +30,7 @@ $url = $thumb['0'];
         </div>
         <ul class="propiedad-info">
             <li class="propiedad-zona">
-                <span class="icono-zona"></span> <?php the_field('zona') ?>
+                <span class="icono-zona"></span> <?php echo ucfirst(get_field('tipo_propiedad'));?>
             </li>
             <li class="propiedad-superficie">
                 <span class="icono-medida"></span><?php the_field('medidas') ?> <?php the_field('unidad_medidas'); ?>  | Dormitorios: <?php the_field('dormitorios') ?>
