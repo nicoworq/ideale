@@ -19,7 +19,7 @@ $imgLightbox = array($url_thumb[0]);
     <div class="post-propiedad-header">
         <div class="header-left">
             <a href='#' class="post-propiedad-thumbnail" style="background-image:url(<?php echo $url_thumb[0] ?>);"></a>  
-            
+
             <div class="post-propiedad-galeria">
                 <?php
                 if (have_rows('galeria')) {
@@ -79,17 +79,21 @@ $imgLightbox = array($url_thumb[0]);
                         <li>Barrio <span><?php the_field('barrio') ?></span></li>
                     <?php }
                     ?>
+                    <?php if (get_field('tipo_propiedad')) { ?>
+                        <li class="propiedad-dormitorios">
+                            <?php echo ucfirst(get_field('tipo_propiedad')) ?>
+                        </li>
+                    <?php } ?>
                     <li class="propiedad-superficie">
                         Superficie <span><?php the_field('medidas') ?> <?php the_field('unidad_medidas'); ?> </span>
                     </li>
 
-                    <?php if (get_field('dormitorios')) {
-                        ?>
+                    <?php if (get_field('dormitorios')) { ?>
                         <li class="propiedad-dormitorios">
                             Dormitorios: <span><?php the_field('dormitorios') ?></span>
                         </li>
-                    <?php }
-                    ?>
+                    <?php } ?>
+
 
                 </ul>
 

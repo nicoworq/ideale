@@ -71,7 +71,7 @@ get_header();
 
     <p>Pensamos en nuestros clientes como "socios estratégicos".<br/>
         Nos especializamos en otorgar un valor agregado a las propiedades siendo intermediarios responsables en la compra, venta y alquiler.
-        <br/>Administramos con el compromiso de cumplir lo pactado y responder profesionalmente ante cualquier imprevisto.
+        <br/>Administramos con el compromiso de cumplir lo pactado y responder profesionalmente ante cualquier imprevisto.<br/>
         Potenciamos el valor de los inmuebles con nuestro asesoramiento jurídico y financiero.
     </p>
 

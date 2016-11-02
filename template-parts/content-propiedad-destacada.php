@@ -37,7 +37,7 @@ if ($the_query->have_posts()) {
                                     <?php
                                     $category = get_the_category();
                                     echo $category[0]->name
-                                    ?>
+                                    ?> | <?php echo ucfirst(get_field('tipo_propiedad'))  ?>
                                 </div>
                                 <div class="propiedad-ubicacion">
                                     <?php the_field('localidad') ?>, <?php the_field('provincia') ?>.
