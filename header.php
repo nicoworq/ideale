@@ -23,7 +23,7 @@
 
         <nav class="navbar" role="navigation">
             <div class="secondary-nav">
-              (0341) 4123456  -  Calle de ejemplo 123,  Rosario, Santa Fe.
+              (0341) 449-5342 -  Entre Ríos 548 1° Piso Of. 10 (2000) Rosario, Santa Fé
             </div>
             <div class="container">
                 <div class="col-md-12">

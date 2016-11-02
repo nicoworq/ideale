@@ -21,9 +21,9 @@ get_header();
                     te ofrecemos propiedades a tu medida, sin vueltas ni complicaciones.</h2>
 
                 <ul class="datos-contacto">       
-                    <li><i class="contacto-icon contacto-icon-mail"></i>contacto@idealepropiedades.com.ar</li>   
-                    <li><i class="contacto-icon contacto-icon-tel"></i>+54 (0341) 4661462</li>
-                    <li><i class="contacto-icon contacto-icon-dir"></i>Pte. Roca 6055 Rosario, Santa Fe , Argentina</li>
+                    <li><i class="contacto-icon contacto-icon-mail"></i>contacto@idealepropiedades.com</li>   
+                    <li><i class="contacto-icon contacto-icon-tel"></i>(0341) 449-5342</li>
+                    <li><i class="contacto-icon contacto-icon-dir"></i>Entre Ríos 548 1° Piso Of. 10 (2000) Rosario, Santa Fé</li>
                 </ul>
             </div>
             <div class="col-md-6">

@@ -68,7 +68,13 @@ get_header();
 
 <section id="home-servicios-acceso">
     <h2>Nuestros servicios</h2>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    <p>Pensamos en nuestros clientes como "socios estratégicos".<br/>
+        Nos especializamos en otorgar un valor agregado a las propiedades siendo intermediarios responsables en la compra, venta y alquiler.
+        <br/>Administramos con el compromiso de cumplir lo pactado y responder profesionalmente ante cualquier imprevisto.
+        Potenciamos el valor de los inmuebles con nuestro asesoramiento jurídico y financiero.
+    </p>
+
     <a class="bt-sitio" href="<?php echo get_permalink(get_page_by_title('Servicios')); ?>">
         ¡Quiero saber más!
     </a>

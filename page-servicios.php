@@ -8,7 +8,6 @@ get_header();
 ?>
 
 <section id="servicios" class="page-header">
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -17,8 +16,6 @@ get_header();
             </div>
         </div>
     </div>
-
-
 </section>
 
 
@@ -44,6 +41,9 @@ get_header();
                 </ul>
 
                 <div id='servicios-container'>
+                    <div class="servicio-titulo-mobile active" data-tab="1">
+                        Intermediación en Compra/venta de inmuebles
+                    </div>
                     <div id='tab1' class='servicio-tab active'>
                         Nuestro principal compromiso es conocer las necesidades de nuestros clientes y
 
@@ -53,7 +53,10 @@ get_header();
 
                         momento y forma adecuada.
                     </div>
-                    <div id='tab2' class='servicio-tab '>
+                    <div class="servicio-titulo-mobile" data-tab="2">
+                        Administración
+                    </div>
+                    <div id='tab2' class='servicio-tab' >
                         La cordialidad y el afecto de nuestros clientes, que en algún momento nos confiaron
 
                         su patrimonio, es el mayor aliciente para decidirnos hoy “ pensar en grande “. Creemos
@@ -67,6 +70,9 @@ get_header();
                         posibilidades de continuar la locación ) y liquidaciones claras y transparentes, son
 
                         algunas de las cualidades que pretendemos nos caractericen.
+                    </div>
+                     <div class="servicio-titulo-mobile" data-tab="3">
+                        Saneamiento edilicio y jurídico de inmuebles
                     </div>
                     <div id='tab3' class='servicio-tab '>
                         En todos estos años, hemos detectado innumerables casos en los que muchos

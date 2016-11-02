@@ -4,6 +4,41 @@
     $(document).ready(function () {
 
 
+
+        /* -----------
+         *  SCROLL SHOW NAV
+         * ----------- */
+
+       
+        var lastScrollTop = 0;
+        $(window).scroll(function () {
+
+            var scrolledDistance = $(window).width() > 768 ? 50 : 50;
+
+            var scrollTop = $(document).scrollTop();
+            var navBar = $('.navbar');
+            if (scrollTop >= scrolledDistance) {
+                navBar.addClass('scrolled');
+            } else {
+                navBar.removeClass('scrolled');
+            }
+
+            if ($(window).width() <= 768) {
+                var st = $(this).scrollTop();
+                if (st > lastScrollTop) {
+                    // downscroll code
+                    navBar.addClass('hidebar');
+                } else {
+                    // upscroll code
+                    navBar.removeClass('hidebar');
+                }
+                lastScrollTop = st;
+            }
+
+
+        });
+
+
         /* -----------
          *  SLICK LIGHTBOX
          * ----------- */
@@ -19,9 +54,6 @@
 
         $('#servicios-tabs a').click(function (e) {
             e.preventDefault();
-
-
-
 
             if ($(this).hasClass('active')) {
                 return false;
@@ -41,8 +73,35 @@
 
             });
 
-
         });
+
+
+        $('.servicio-titulo-mobile').click(function () {
+            $('.servicio-titulo-mobile').removeClass('active');
+            $(this).addClass('active');
+
+
+            $('.servicio-tab.active').removeClass('active')
+
+            var tabClicked = parseInt($(this).attr('data-tab'));
+
+            $('.servicio-tab:visible').fadeOut();
+
+            $('#' + 'tab' + tabClicked).fadeIn(function () {
+
+                $('#' + 'tab' + tabClicked).addClass('active')
+
+            });
+        });
+
+
+        /* -----------
+         *  TAB SERVICIOS MOBILE
+         * ----------- */
+
+
+
+
 
 
         /* -----------
@@ -206,11 +265,11 @@
          */
 
         if ($('#mapa-contacto').length > 0) {
-            var mapOptions = {center: new google.maps.LatLng(-32.975424, -60.6680259), zoom: 12, mapTypeId: google.maps.MapTypeId.ROADMAP, scrollwheel: false};
+            var mapOptions = {center: new google.maps.LatLng(-32.942966, -60.640329), zoom: 12, mapTypeId: google.maps.MapTypeId.ROADMAP, scrollwheel: false};
             var map = new google.maps.Map(document.getElementById("mapa-contacto-map"), mapOptions);
 
 
-            var latLngMarker = new google.maps.LatLng(-33.007651, -60.655996, 17);
+            var latLngMarker = new google.maps.LatLng(-32.942966, -60.640329, 17);
             var marker = new google.maps.Marker({
                 position: latLngMarker,
                 map: map,

@@ -32,12 +32,12 @@ get_header();
             </div>
             <div class="col-md-4">
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    Sabemos que el rubro inmobiliario aborda fundamentalmente el área de SERVICIOS y es este nuestro norte permanente, lo que nos propusimos brindar desde nuestro orígenes en esta empresa, hace más de diez años.  No dejamos de indagar acerca de las necesidades de nuestro clientes,
                 </p>
             </div>
             <div class="col-md-4">
                 <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    si estamos seguros de poder satisfacerlas con creces, golpeamos a su puerta o abrimos las nuestras. La experiencia recogida en estos años junto a “ ellos “ parece indicarnos que ese es el camino. 
                 </p>
             </div>
 
@@ -47,14 +47,35 @@ get_header();
 
 
 <section id="institucional-contenido2">
-    <h3>Estamos en cada detalle</h3>
-    <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Misión</h3>
+                <p>
+                    Mejorar permanentemente el servicio brindado a nuestro clientes,<br/>
+                    debemos sentir y hacer sentir que nuestra tarea es necesaria.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3>Visión</h3>
+                <p>
+                    Mantener el trato personalizado, cordial y humano, demostrando<br/>
+                    solvencia en nuestras propuestas y así brindar seguridad y tranquilidad<br/>
+                    a quienes confiaron en nosotros.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Valores</h3>
+                <p>
+                    Escuchar permanentemente a nuestros clientes, Transparencia y honradez, Cumplimiento en los <br/>
+                    compromisos asumidos, Dar el máximo cada día.
+                </p>
+            </div>
+        </div>
+    </div>
 
-    <a href="#" class="bt-sitio">
-        Conocé nuestros servicios
-    </a>
 </section>
 
 <?php get_template_part('template-parts/content', '12-anios'); ?>

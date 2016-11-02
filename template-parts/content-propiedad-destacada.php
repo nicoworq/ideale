@@ -24,6 +24,11 @@ if ($the_query->have_posts()) {
                     <div class="col-md-12">
 
                         <div class="propiedad">
+                            
+                            <div class="propiedad-imagen-mobile" style="background-image: url(<?php echo $feat_image[0]; ?>);">
+
+                            </div>
+                            
                             <div class="propiedad-datos">
                                 <div class="propiedad-tipo-operacion">
                                     <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="6" height="9" viewBox="0 0 6 9">

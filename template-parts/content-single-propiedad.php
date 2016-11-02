@@ -35,9 +35,7 @@ $imgLightbox = array($url_thumb[0]);
                 ?>
             </div> 
             <script>
-
                 window.imagenesSlick = <?php echo json_encode($imgLightbox); ?>;
-
             </script>
         </div>
         <div class="header-right">
