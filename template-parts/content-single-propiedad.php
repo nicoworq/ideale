@@ -59,10 +59,10 @@ $imgLightbox = array($url_thumb[0]);
         <div class="col-md-9">
             <div class="post-propiedad-datos">
 
-                <h4 class="propiedad-ubicacion"><?php the_field('localidad') ?>,&nbsp;<?php the_field('provincia') ?></h4>               
+                <h4 class="propiedad-ubicacion"><?php the_field('localidad') ?>,&nbsp;<?php the_field('provincia') ?> <br/> <?php the_field('direccion') ?></h4>               
 
 
-                <h1 class="propiedad-direccion"><?php the_field('direccion') ?></h1>
+                <h1 class="propiedad-direccion"><?php the_title(); ?></h1>
 
 
                 <div class="propiedad-texto">

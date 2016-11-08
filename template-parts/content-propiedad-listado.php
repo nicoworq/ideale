@@ -26,7 +26,7 @@ $url = $thumb['0'];
             <?php the_field('localidad') ?>, <?php the_field('provincia') ?>.
         </div>
         <div class="propiedad-direccion">
-            <?php the_field('direccion') ?>
+            <?php the_title() ?>
         </div>
         <ul class="propiedad-info">
             <li class="propiedad-zona">
