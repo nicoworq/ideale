@@ -125,7 +125,7 @@ function ideale_scripts() {
     wp_enqueue_script('jquery');
 
     wp_enqueue_style('ideale-boot', get_template_directory_uri() . '/css/bootstrap.min.css');
-    wp_enqueue_style('ideale-style', get_template_directory_uri() . '/css/main.css?h=b');
+    wp_enqueue_style('ideale-style', get_template_directory_uri() . '/css/main.min.css?a=b');
 
     wp_enqueue_style('ideale-style-ext', get_template_directory_uri() . '/css/externalCss.css');
 
@@ -135,7 +135,7 @@ function ideale_scripts() {
 
     //wp_enqueue_script('ideale-modernzr', get_template_directory_uri() . '/js/vendor/modernizr-2.8.3.min.js', array(), '20151215', false);
     wp_enqueue_script('ideale-plugins', get_template_directory_uri() . '/js/plugins.min.js', array('jquery'), '20151215', true);
-    wp_enqueue_script('ideale-scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '20151215', true);
+    wp_enqueue_script('ideale-scripts', get_template_directory_uri() . '/js/main.min.js', array('jquery'), '20151215', true);
     wp_localize_script('ideale-scripts', 'Ideale', array('ajaxUrl' => admin_url('admin-ajax.php'), 'themeUrl' => get_stylesheet_directory_uri()));
 }
 

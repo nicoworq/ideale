@@ -745,13 +745,13 @@ img{
     display: block;
 }
 #alquiler-home:hover .servicio-home-bg{
-    transform: scale(1.05) translateX(-20px);
+    transform: translateY(-10px);
 }
 #venta-home:hover .servicio-home-bg{
-    transform: scale(1.05) translateX(20px);
+    transform: translateY(-10px);
 }
 .servicio-home-bg{
-    transition: .4s all cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transition: .2s all cubic-bezier(0.4, 0, 0.61, 0.98);
 }
 .servicio-home-contenido{
     position: absolute;
@@ -2776,7 +2776,11 @@ aside.entry-meta a{
 }
 
 .propiedad-listado{
+    transition: .2s all ease-in-out;
     text-decoration: none !important;
+}
+.propiedad-listado:hover{
+    transform: translateY(-3px);
 }
 
 .propiedad-listado .propiedad-imagen , .propiedad-listado .propiedad-datos{
@@ -2831,7 +2835,7 @@ aside.entry-meta a{
     font-size: 20px;
     line-height: 24px;
     margin: 8px 0 16px;
-    min-height: 47px;
+    min-height: 48px;
 }
 
 .propiedad-listado .propiedad-info li{
@@ -3072,7 +3076,7 @@ aside.entry-meta a{
 }
 
 @media(max-width:768px){
-    
+
     .single .post-propiedad-datos .propiedad-info li{
         display: block;
         border-right: none;
@@ -3112,7 +3116,7 @@ aside.entry-meta a{
     background: white;
     color: black;
     padding: 12px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 .propiedades-recomendadas li{
     margin-bottom: 25px;

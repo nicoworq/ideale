@@ -4,7 +4,7 @@
  *
  * @package Idele
  */
-$url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'imagen-thumb-propiedad');
+$url_thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumb-propiedad-destacada');
 
 //imagenes lightbox galeria
 
@@ -27,7 +27,7 @@ $imgLightbox = array($url_thumb[0]);
                     while (have_rows('galeria')) {
                         the_row();
                         $imagen = get_sub_field('imagen_propiedad');
-                        $imgLightbox[] = $imagen['url'];
+                        $imgLightbox[] = $imagen['sizes']['large'];
                         echo "<li class='slide'><a href='#' data-imagelightbox='f'><img src='{$imagen['sizes']['thumbnail']}' alt='Imagen propiedad'/></a></li>";
                     }
                     echo "</ul>";
@@ -125,9 +125,9 @@ $imgLightbox = array($url_thumb[0]);
 
         </div>
         <div class="col-md-3 propiedad-sidebar">
-            <div class="propiedad-fb">
+            <!--<div class="propiedad-fb">
                 <div class="fb-page" data-href="https://www.facebook.com/experienciasdigitales" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/experienciasdigitales" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/experienciasdigitales">WORQ</a></blockquote></div>
-            </div>
+            </div>-->
 
             <div class="propiedades-recomendadas">
                 <h1>Propiedades recomendadas</h1>
